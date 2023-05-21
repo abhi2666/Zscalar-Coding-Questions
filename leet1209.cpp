@@ -26,7 +26,7 @@ public:
 
         for(auto c : s){
             //check if stack is empty or if current elements doesn't matches with the st.top ele
-            if(st.size() == 0 || c != st.back()){
+            if(st.size() == 0 || c != st.back().first){
                 //put into stack
                 st.push_back({c, 1}); 
             }
@@ -37,7 +37,7 @@ public:
 
             if(st.back().second == k){
                 //means you can delete that element
-                st.pop();
+                st.pop_back();
             }
         }
         string res;
